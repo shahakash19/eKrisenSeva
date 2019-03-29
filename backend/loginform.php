@@ -34,7 +34,7 @@
 		else
 		{
 			echo "<script>alert('Enter Correct USERNAME and PASSWORD.');</script>";
-			header("Location:../index.php");
+			echo "<script>window.location='../index.php';</script>";
 		}
 	}
 ?>

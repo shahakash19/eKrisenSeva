@@ -336,6 +336,18 @@
 		<!-- main content start-->
 		<div id="page-wrapper">
 			<div class="main-page">
+
+				<form>
+					<div class="form-group input-group">
+						<input type="text"  class="form-control" placeholder="Enyer the distress message">
+						<div class="input-group-btn">
+							<button class="btn btn-default" type="submit">
+								Send
+							</button>
+						</div>
+					</div>
+				</form>
+
 				<form>
 					<div class="form-group input-group">
 						<input type="text" id="search_location" class="form-control" placeholder="Search location or drag marker on the map">

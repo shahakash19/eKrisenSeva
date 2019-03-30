@@ -208,8 +208,8 @@
  	$('#shelteraddress').val($add);
  	$('#latitude').val($lat);
  	$('#longitude').val($lng);
-
-
+ 
+ 
  } 
  function abc(){
  	google.maps.event.addListener(marker, 'drag', function() {
@@ -226,7 +226,7 @@
  		});
  	});
  }
-
+ 
 </script>
 <style type="text/css">
 #geomap{

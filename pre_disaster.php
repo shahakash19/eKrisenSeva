@@ -339,7 +339,7 @@
 
 				<form>
 					<div class="form-group input-group">
-						<input type="text"  class="form-control" placeholder="Enyer the distress message">
+						<input type="text"  class="form-control" placeholder="Enter the distress message">
 						<div class="input-group-btn">
 							<button class="btn btn-default" type="submit">
 								Send
@@ -348,16 +348,7 @@
 					</div>
 				</form>
 
-				<form>
-					<div class="form-group input-group">
-						<input type="text" id="search_location" class="form-control" placeholder="Search location or drag marker on the map">
-						<div class="input-group-btn">
-							<button class="btn btn-default get_map" type="submit">
-								Locate
-							</button>
-						</div>
-					</div>
-				</form>
+				
 
 				<!-- display google map -->
 				<div id="geomap"></div>
@@ -371,7 +362,16 @@
 					</div>
 				</div>
 
-
+				<form>
+					<div class="form-group input-group">
+						<input type="text" id="search_location" class="form-control" placeholder="Search location or drag marker on the map">
+						<div class="input-group-btn">
+							<button class="btn btn-default get_map" type="submit">
+								Locate
+							</button>
+						</div>
+					</div>
+				</form>
 
 
 

@@ -57,19 +57,19 @@ if(isset($_SESSION['username']))
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<h1><a class="navbar-brand" href="index.html"><span class="fa fa-area-chart"></span>e-KrisenSeva<span class="dashboard_text">Disaster Management</span></a></h1>					
+						<h1><a class="navbar-brand" href="index.php"><span class="fa fa-area-chart"></span>e-KrisenSeva<span class="dashboard_text">Disaster Management</span></a></h1>					
 					</div>
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="sidebar-menu">
 							<li class="header">MAIN NAVIGATION</li>
 							<li class="treeview">
-								<a href="index.html">
+								<a href="index.php">
 									<i class="fa fa-dashboard"></i> <span>Login</span>
 								</a>
 							</li>
 							
 							<li class="treeview">
-								<a href="signup.html">
+								<a href="signup.php">
 									<i class="fa fa-pie-chart"></i>
 									<span>Signup</span>
 									<span class="label label-primary pull-right">new</span>
@@ -148,7 +148,7 @@ if(isset($_SESSION['username']))
 					</div>
 					<div class="registration">
 						Already Registered.
-						<a class="" href="index.html">
+						<a class="" href="index.php">
 							Login
 						</a>
 					</div>

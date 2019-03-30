@@ -14,8 +14,8 @@
 				$query_num_rows=mysqli_num_rows($query_run);
 				if($query_num_rows==0)
 				{
-					echo "<script>alert('Username Not Found. Please Register.');</script>";
-					echo "<script>window.location='../signup.php';</script>";
+					echo "<script>alert('Invalid Username and Password');</script>";
+					echo "<script>window.location='../index.php';</script>";
 				}
 				else if($query_num_rows==1)
 				{

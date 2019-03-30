@@ -394,39 +394,11 @@
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td>1</td>
-													<td>Face book</td>
-													<td>Alexander</td>                                 
-													
-													<td><span class="label label-danger">in progress</span></td>
-													<td><span class="badge badge-info">70%</span></td>
-												</tr>
-												<tr>
-													<td>2</td>
-													<td>Twitter</td>
-													<td>Lucika adam</td>                               
-													
-													<td><span class="label label-success">completed</span></td>
-													<td><span class="badge badge-success">80%</span></td>
-												</tr>
-												<tr>
-													<td>3</td>
-													<td>Google</td>
-													<td>Michael</td>                                
-													
-													<td><span class="label label-warning">in progress</span></td>
-													<td><span class="badge badge-warning">30%</span></td>
-												</tr>
-												<tr>
-													<td>4</td>
-													<td>LinkedIn</td>
-													<td>Chris dany</td>                                 
-													
-													<td><span class="label label-info">in progress</span></td>
-													<td><span class="badge badge-info">55%</span></td>
-												</tr>
-												
+												<?php 
+													include 'backend/connect.php';
+													include 'backend/view_shelter.php';
+													showDetails($con);
+												?>
 											</tbody>
 										</table>
 									</div>

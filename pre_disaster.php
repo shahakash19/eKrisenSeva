@@ -625,17 +625,17 @@
 										<div class="form-group">
 											<label for="checkbox" class="col-sm-2 control-label">Facilities</label>
 											<div class="col-sm-8">
-												<div class="checkbox-inline1"><label><input type="checkbox"name = "facility"> Food</label></div>
-												<div class="checkbox-inline1"><label><input type="checkbox"name = "facility" checked=""> Clothing</label></div>
-												<div class="checkbox-inline1"><label><input type="checkbox"name = "facility">Shelter</label></div>
-												<div class="checkbox-inline1"><label><input type="checkbox"name = "facility" disabled="" checked=""> Sanitation</label></div>
+												<div class="checkbox-inline1"><label><input type="checkbox"name = "facility[]" value='0'> Food</label></div>
+												<div class="checkbox-inline1"><label><input type="checkbox"name = "facility[]" value='1' checked=""> Clothing</label></div>
+												<div class="checkbox-inline1"><label><input type="checkbox"name = "facility[]" value='2'>Shelter</label></div>
+												<div class="checkbox-inline1"><label><input type="checkbox"name = "facility[]" value='3' disabled="" checked=""> Sanitation</label></div>
 											</div>
 										</div>
 
 										<div class="form-group">
 											<label for="official-add" class="col-sm-2 control-label">Shelter Official</label>
 											<div class="col-sm-8"><select name="official-add" id="selector1" class="form-control1">
-												<option value="1">Lorem ipsum dolor sit amet.</option>
+												<option value="0">Lorem ipsum dolor sit amet.</option>
 												<option value="2">Dolore, ab unde modi est!</option>
 												<option value="3">Illum, fuga minus sit eaque.</option>
 												<option value="4">Consequatur ducimus maiores voluptatum minima.</option>

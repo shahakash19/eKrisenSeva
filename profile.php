@@ -4,6 +4,12 @@ if(!isset($_SESSION['username'])) {
 	header("Location: index.php");
 	exit();
 }
+include "backend/connect.php";
+$stmt = $con->prepare("SELECT * FROM `users` WHERE `username` = ?");
+$stmt->bind_param("s", $_SESSION['username']);
+$stmt->execute();
+$profile = $stmt->get_result()->fetch_assoc();
+$stmt->close();
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -32,44 +38,6 @@ if(!isset($_SESSION['username'])) {
 	<!-- js-->
 	<script src="js/jquery-1.11.1.min.js"></script>
 	<script src="js/modernizr.custom.js"></script>
-	<!-- Backend required start-->
-
-	<script src="../js/custom/server.config.js"></script>
-	<script src="../js/custom/loginControl.js"></script>
-	<script src="../js/custom/common_functions.js"></script>
-
-	<script>
-		$(window).load(function(){
-			$.ajax({
-				type: 'GET',
-				url: serverName + "php/Requesthandler.php?action=getUserProfile",
-				dataType: 'json',
-				success: function(data){
-					if(data['status'] == true){
-						$('input[name="fname"]').val(data['content']['fname']);
-						$('input[name="mname"]').val(data['content']['mname']);
-						$('input[name="lname"]').val(data['content']['lname']);
-						$('input[name="dob"]').val(data['content']['dob']);
-						$('input[type="radio"]:checked').removeAttr('checked');
-						$('input[value="' + data["content"]["gender"] + '"]').attr('checked', 'checked');
-						$('input[name="con_num"]').val(data['content']['contact_no']);
-						$('input[name="con_num1"]').val(data['content']['alternate_contact_no']);
-						$('input[name="email"]').val(data['content']['email_id']);
-						$('input[name="aadhar_no"]').val(data['content']['aadhar_no']);
-
-						let pimg = new Image();
-						pimg.src = serverName + data['content']['profile_photo'];
-						if(pimg.width != 0) $('img#saved_profile_photo').attr('src', serverName + data['content']['profile_photo']);					
-
-						return true;	
-					}
-
-					console.log(data['msg']);
-				}
-			});
-		});
-	</script>
-	<!-- backend required end -->
 
 
 	<!--webfonts-->
@@ -173,8 +141,8 @@ if(!isset($_SESSION['username'])) {
 								<div class="profile_img">	
 									<span class="prfil-img"><img src="images/2.jpg" alt=""> </span> 
 									<div class="user-name">
-										<p>Admin Name</p>
-										<span>Administrator</span>
+										<p><?php echo htmlspecialchars($_SESSION['username']); ?></p>
+										<span>User</span>
 									</div>
 									<i class="fa fa-angle-down lnr"></i>
 									<i class="fa fa-angle-up lnr"></i>
@@ -197,11 +165,11 @@ if(!isset($_SESSION['username'])) {
 		<!-- main content start-->
 		<div id="page-wrapper">
 			<div class="main-page">
-				<h2 class="title1">Blank Page</h2>
+				<h2 class="title1">Update Profile</h2>
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8">
-							<form class="form-horizontal" id="contactDetails">
+							<form class="form-horizontal" id="contactDetails" action="backend/update_profile.php" method="POST">
 								<fieldset>
 									<div class="form-group">
 										<label class="col-md-4 control-label" for="Name (Full name)">Name (First name)</label>  
@@ -211,7 +179,7 @@ if(!isset($_SESSION['username'])) {
 													<i class="fa fa-user">
 													</i>
 												</div>
-												<input id="Name (First name) textfieldToClose" name="fname" type="text" placeholder="Name (First name)" class="form-control input-md field_disable">
+												<input id="Name (First name) textfieldToClose" name="fname" type="text" placeholder="Name (First name)" class="form-control input-md field_disable" value="<?php echo htmlspecialchars($profile['fname'] ?? ''); ?>">
 											</div>
 
 
@@ -244,7 +212,7 @@ if(!isset($_SESSION['username'])) {
 													<i class="fa fa-user">
 													</i>
 												</div>
-												<input id="Name (Last name) textfieldToClose" name="lname" type="text" placeholder="Name (Last name)" class="form-control input-md field_disable">
+												<input id="Name (Last name) textfieldToClose" name="lname" type="text" placeholder="Name (Last name)" class="form-control input-md field_disable" value="<?php echo htmlspecialchars($profile['lname'] ?? ''); ?>">
 											</div>
 
 
@@ -330,7 +298,7 @@ if(!isset($_SESSION['username'])) {
 													<i class="fa fa-envelope-o"></i>
 
 												</div>
-												<input id="Email Address" name="email" type="text" placeholder="Email Address" class="form-control input-md field_disable">
+												<input id="Email Address" name="email" type="text" placeholder="Email Address" class="form-control input-md field_disable" value="<?php echo htmlspecialchars($profile['username'] ?? ''); ?>">
 
 											</div>
 
@@ -365,9 +333,8 @@ if(!isset($_SESSION['username'])) {
 										<div class="form-group">
 											<label class="col-md-4 control-label" ></label>  
 											<div class="col-md-8">
-												<a href="#" class="btn btn-success" name="button1" id="disablebutton" class="profile_submit">Submit</a>
-												<a href="#" class="btn btn-danger" value=""><span class="glyphicon glyphicon-remove-sign"></span> Clear</a>
-												<input type="button" value="dfsdfsfsdf" class="profile_submit">
+												<button type="button" class="btn btn-default" id="disablebutton">Edit</button>
+												<input type="submit" class="btn btn-success" value="Save Changes">
 											</div>
 										</div>
 
@@ -375,7 +342,7 @@ if(!isset($_SESSION['username'])) {
 								</form>
 							</div>
 							<div class="col-md-2 hidden-xs">
-								<img src="http://websamplenow.com/30/userprofile/images/avatar.jpg" class="img-responsive img-thumbnail" id="saved_profile_photo">
+								<img src="images/2.jpg" class="img-responsive img-thumbnail" id="saved_profile_photo">
 							</div>
 						</div>
 					</div>
@@ -425,29 +392,6 @@ if(!isset($_SESSION['username'])) {
 			<!-- Bootstrap Core JavaScript -->
 			<script src="js/bootstrap.js"> </script>
 
-			<script>
-				$(document).ready(function() {
-					$(".profile_submit").click(function(event) {
-						var formData = new FormData($("#contactDetails")[0]);
-						for (var pair of formData.entries()) {
-							console.log(pair[0]+ ', ' + pair[1]); 
-						}
-
-						$.ajax({
-							type: 'POST',
-							url: serverName + 'php/Requesthandler.php?action=addContactDetails',
-							data: formData,
-							cache: false,
-							contentType: false,
-							processData: false,
-							dataType: 'json',
-							success: function(data){
-								console.log(data);
-							}
-						});
-					});
-				});
-			</script>
 
 		</body>
 		</html>

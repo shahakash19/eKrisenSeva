@@ -102,7 +102,7 @@ if(!isset($_SESSION['username'])) {
 				<div class="profile_details_left"><!--notifications of menu start -->
 					<ul class="nofitications-dropdown">
 						<li class="dropdown head-dpdn">
-							<a href="chat.html" class="dropdown-toggle"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
+							<a href="chat.php" class="dropdown-toggle"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
 						</li>
 						
 					</ul>
@@ -119,8 +119,8 @@ if(!isset($_SESSION['username'])) {
 								<div class="profile_img">	
 									<span class="prfil-img"><img src="images/2.jpg" alt=""> </span> 
 									<div class="user-name">
-										<p>Admin Name</p>
-										<span>Administrator</span>
+										<p><?php echo htmlspecialchars($_SESSION['username']); ?></p>
+										<span>User</span>
 									</div>
 									<i class="fa fa-angle-down lnr"></i>
 									<i class="fa fa-angle-up lnr"></i>
@@ -148,7 +148,7 @@ if(!isset($_SESSION['username'])) {
 					<div class="folder widget-shadow">
 						<ul>
 							<li class="head">Global Chat</li>
-							<li><a href="inbox.html"><i class="fa fa-inbox"></i>Click for Global Chat <span>52</span></a></li>
+							<li><a href="chat.php"><i class="fa fa-inbox"></i>Click for Global Chat <span>52</span></a></li>
 							<!-- <li><a href="#"><i class="fa fa fa-envelope-o"></i>Sent </a></li>
 							<li><a href="#"><i class="fa fa-file-text-o"></i>Drafts <span>03</span></a> </li>
 							<li><a href="#"><i class="fa fa-flag-o"></i>Spam </a></li>

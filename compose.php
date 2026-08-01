@@ -272,7 +272,7 @@ if(!isset($_SESSION['username'])) {
 					<div class="folder widget-shadow">
 						<ul>
 							<li class="head">Global Chat</li>
-							<li><a href="inbox.html"><i class="fa fa-inbox"></i>Click for Global Chat <span>52</span></a></li>
+							<li><a href="chat.php"><i class="fa fa-inbox"></i>Click for Global Chat <span>52</span></a></li>
 							<!-- <li><a href="#"><i class="fa fa fa-envelope-o"></i>Sent </a></li>
 							<li><a href="#"><i class="fa fa-file-text-o"></i>Drafts <span>03</span></a> </li>
 							<li><a href="#"><i class="fa fa-flag-o"></i>Spam </a></li>

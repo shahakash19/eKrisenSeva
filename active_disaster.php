@@ -191,8 +191,7 @@ if(!isset($_SESSION['username'])) {
     	geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
     		if (status == google.maps.GeocoderStatus.OK) {
     			if (results[0]) {
-    				console.log("drag event");
-    				$add=(results[0].formatted_address);
+        				$add=(results[0].formatted_address);
     				$lat=(marker.getPosition().lat());
     				$lng=(marker.getPosition().lng());
     				return showcoords($add,$lat,$lng);
@@ -223,8 +222,7 @@ if(!isset($_SESSION['username'])) {
  		geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
  			if (status == google.maps.GeocoderStatus.OK) {
  				if (results[0]) {
- 					console.log("drag event");
- 					$add=(results[0].formatted_address);
+ 	 					$add=(results[0].formatted_address);
  					$lat=(marker.getPosition().lat());
  					$lng=(marker.getPosition().lng());
  					return showcoords($add,$lat,$lng);
@@ -402,7 +400,7 @@ if(!isset($_SESSION['username'])) {
 											</thead>
 											<tbody>
 												<?php 
-													include 'backend/connect.php';
+													include_once 'backend/connect.php';
 													include 'backend/view_shelter.php';
 													showDetails($con);
 												?>
@@ -515,63 +513,64 @@ if(!isset($_SESSION['username'])) {
 									<div class="modal-body">
 
 										<div class="form-three widget-shadow">
-											<form class="form-horizontal">
+											<form class="form-horizontal" action="backend/add_shelter.php" method="POST">
 
 												<div class="form-group">
-													<label for="Name" class="col-sm-2 control-label">Name</label>
+													<label for="sheltername" class="col-sm-2 control-label">Name</label>
 													<div class="col-sm-8">
-														<input type="text" class="form-control1 add" id="sheltername" placeholder="sheltername">
+														<input type="text" class="form-control1 add" id="sheltername" name="sheltername" placeholder="Shelter name" required="">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="Latitude" class="col-sm-2 control-label">Latitude</label>
+													<label for="shelteraddress" class="col-sm-2 control-label">Address</label>
 													<div class="col-sm-8">
-														<input type="text" class="form-control1" id="latitude" placeholder="Latitude">
+														<input type="text" class="form-control1" id="shelteraddress" name="shelteraddress" placeholder="Address" required="">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="Longitude" class="col-sm-2 control-label">Longitude</label>
+													<label for="latitude" class="col-sm-2 control-label">Latitude</label>
 													<div class="col-sm-8">
-														<input type="text" class="form-control1" id="longitude" placeholder="Longitude">
+														<input type="text" class="form-control1 lat" id="latitude" name="latitude" placeholder="Latitude" required="">
 													</div>
 												</div>
 												<div class="form-group">
-													<label for="checkbox" class="col-sm-2 control-label">Facilities</label>
+													<label for="longitude" class="col-sm-2 control-label">Longitude</label>
 													<div class="col-sm-8">
-														<div class="checkbox-inline1"><label><input type="checkbox"> Food</label></div>
-														<div class="checkbox-inline1"><label><input type="checkbox" checked=""> Clothing</label></div>
-														<div class="checkbox-inline1"><label><input type="checkbox">Shelter</label></div>
-														<div class="checkbox-inline1"><label><input type="checkbox" disabled="" checked=""> Sanitation</label></div>
+														<input type="text" class="form-control1 lng" id="longitude" name="longitude" placeholder="Longitude" required="">
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="col-sm-2 control-label">Facilities</label>
+													<div class="col-sm-8">
+														<div class="checkbox-inline1"><label><input type="checkbox" name="facility[]" value="0"> Food</label></div>
+														<div class="checkbox-inline1"><label><input type="checkbox" name="facility[]" value="1"> Clothing</label></div>
+														<div class="checkbox-inline1"><label><input type="checkbox" name="facility[]" value="2"> Shelter</label></div>
+														<div class="checkbox-inline1"><label><input type="checkbox" name="facility[]" value="3"> Sanitation</label></div>
 													</div>
 												</div>
 
 												<div class="form-group">
-													<label for="selector1" class="col-sm-2 control-label">Shelter Official</label>
-													<div class="col-sm-8"><select name="selector1" id="selector1" class="form-control1">
-														<option>Lorem ipsum dolor sit amet.</option>
-														<option>Dolore, ab unde modi est!</option>
-														<option>Illum, fuga minus sit eaque.</option>
-														<option>Consequatur ducimus maiores voluptatum minima.</option>
-													</select></div>
+													<label for="official-add" class="col-sm-2 control-label">Shelter Official</label>
+													<div class="col-sm-8">
+														<input type="text" class="form-control1" name="official-add" placeholder="Official name" required="">
+													</div>
 												</div>
 
-
-
-
 												<div class="form-group">
-													<label for="smallinput" class="col-sm-2 control-label label-input-sm">Capacity</label>
+													<label for="capacity-add" class="col-sm-2 control-label label-input-sm">Capacity</label>
 													<div class="col-sm-8">
-														<input type="text" class="form-control1 input-sm" id="smallinput" placeholder="Capacity">
+														<input type="number" class="form-control1 input-sm" id="capacity-add" name="capacity-add" placeholder="Capacity" required="">
 													</div>
+												</div>
+
+												<div class="modal-footer">
+													<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+													<button type="submit" class="btn btn-primary">Add Shelter</button>
 												</div>
 
 											</form>
 										</div>
 
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-										<button type="button" class="btn btn-primary">Add Shelter</button>
 									</div>
 								</div>
 							</div>

@@ -191,8 +191,7 @@ if(!isset($_SESSION['username'])) {
     	geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
     		if (status == google.maps.GeocoderStatus.OK) {
     			if (results[0]) {
-    				console.log("drag event");
-    				$add=(results[0].formatted_address);
+        				$add=(results[0].formatted_address);
     				$lat=(marker.getPosition().lat());
     				$lng=(marker.getPosition().lng());
     				return showcoords($add,$lat,$lng);
@@ -223,8 +222,7 @@ if(!isset($_SESSION['username'])) {
  		geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
  			if (status == google.maps.GeocoderStatus.OK) {
  				if (results[0]) {
- 					console.log("drag event");
- 					$add=(results[0].formatted_address);
+ 	 					$add=(results[0].formatted_address);
  					$lat=(marker.getPosition().lat());
  					$lng=(marker.getPosition().lng());
  					return showcoords($add,$lat,$lng);
@@ -344,12 +342,12 @@ if(!isset($_SESSION['username'])) {
 		<div id="page-wrapper">
 			<div class="main-page">
 
-				<form>
+				<form action="backend/send_distress.php" method="POST">
 					<div class="form-group input-group">
-						<input type="text"  class="form-control" placeholder="Enter the distress message">
+						<input type="text" name="message" class="form-control" placeholder="Enter the distress message" required="">
 						<div class="input-group-btn">
-							<button class="btn btn-default" type="submit">
-								Send
+							<button class="btn btn-danger" type="submit">
+								Send Distress
 							</button>
 						</div>
 					</div>
@@ -405,7 +403,7 @@ if(!isset($_SESSION['username'])) {
 							</thead>
 							<tbody>
 								<?php 
-									include 'backend/connect.php';
+									include_once 'backend/connect.php';
 									include 'backend/view_shelter.php';
 									showDetails($con);
 								?>
@@ -430,45 +428,19 @@ if(!isset($_SESSION['username'])) {
 						<h4>Add Shelter Official</h4>
 					</div>
 					<div class="form-body">
-						<div data-example-id="simple-form-inline"> 
-							<form class="form-inline"> 
-								<div class="form-group"> 
-									<input type="name" class="form-control" id="exampleInputName3" placeholder="Name"> 
+						<div data-example-id="simple-form-inline">
+							<form class="form-inline" action="backend/add_official.php" method="POST">
+								<div class="form-group">
+									<input type="text" name="name" class="form-control" placeholder="Name" required="">
 								</div>
-								<div class="form-group"> 
-									<input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email"> 
-								</div> 
-								<div class="form-group"> 
-									<input type="type" class="form-control" id="exampleInputcontact3" placeholder="Contact No."> 
-								</div> 
-								<div class="checkbox"> 
-									<label> <input type="checkbox"> Remember me </label> 
-								</div> <button type="submit" class="btn btn-default">Add</button> 
-							</form> 
-						</div>
-					</div>
-				</div>
-				<div class="inline-form widget-shadow">
-					<div class="form-title">
-						<h4>Add Resource Provider</h4>
-					</div>
-					<div class="form-body">
-						<div data-example-id="simple-form-inline"> 
-							<form class="form-inline"> 
-								<div class="form-group"> 
-									<input type="name" class="form-control" id="exampleInputName3" placeholder="Name"> 
+								<div class="form-group">
+									<input type="email" name="email" class="form-control" placeholder="Email">
 								</div>
-								<div class="form-group"> 
-									<input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email"> 
-								</div> 
-								<div class="form-group"> 
-									<input type="text" class="form-control" id="exampleInputContact3" placeholder="Contact No."> 
-								</div> 
-								<div class="checkbox"> 
-									<label> <input type="checkbox"> Remember me </label> 
-								</div> 
-								<button type="submit" class="btn btn-default">Add</button> 
-							</form> 
+								<div class="form-group">
+									<input type="text" name="contact" class="form-control" placeholder="Contact No." required="">
+								</div>
+								<button type="submit" class="btn btn-primary">Add Official</button>
+							</form>
 						</div>
 					</div>
 				</div>

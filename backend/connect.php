@@ -6,6 +6,6 @@ $dbName = "SakecConnect2019";                                        //database 
 $con = mysqli_connect($serverName,$userName,$pass,$dbName);	  // to connect database
 	if(!$con)
 	{
-		echo "".mysql_error($con);                          //display error if connetion is not set
+		echo "".mysqli_connect_error();
 	}
 ?>

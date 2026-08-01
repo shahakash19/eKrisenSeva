@@ -1,4 +1,10 @@
-
+<?php
+session_start();
+if(!isset($_SESSION['username'])) {
+	header("Location: index.php");
+	exit();
+}
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -50,34 +56,34 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<h1><a class="navbar-brand" href="index.html"><span class="fa fa-area-chart"></span>e-KrisenSeva<span class="dashboard_text">Disaster Management</span></a></h1>
+						<h1><a class="navbar-brand" href="index.php"><span class="fa fa-area-chart"></span>e-KrisenSeva<span class="dashboard_text">Disaster Management</span></a></h1>
 					</div>
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="sidebar-menu">
 							<li class="header">MAIN NAVIGATION</li>
 							<li class="treeview">
-								<a href="pre_disaster.html">
+								<a href="pre_disaster.php">
 									<i class="fa fa-dashboard"></i> <span>Pre Disaster</span>
 								</a>
 							</li>
-							
+
 							<li class="treeview">
-								<a href="active_disaster.html">
+								<a href="active_disaster.php">
 									<i class="fa fa-pie-chart"></i>
 									<span>Active Disaster</span>
 									<span class="label label-primary pull-right">new</span>
 								</a>
 							</li>
-							
+
 							<li>
-								<a href="post_disaster.html">
+								<a href="post_disaster.php">
 									<i class="fa fa-th"></i> <span>Post Disaster</span>
 									<small class="label pull-right label-info">08</small>
 								</a>
 							</li>
 							<li class="header">LABELS</li>
-							<li><a href="chat.html"><i class="fa fa-angle-right text-red"></i> <span>Chat</span></a></li>
-							<li><a href="profile.html"><i class="fa fa-angle-right text-yellow"></i> <span>Update Profile</span></a></li>
+							<li><a href="chat.php"><i class="fa fa-angle-right text-red"></i> <span>Chat</span></a></li>
+							<li><a href="profile.php"><i class="fa fa-angle-right text-yellow"></i> <span>Update Profile</span></a></li>
 							
 						</ul>
 					</div>
@@ -123,8 +129,8 @@
 							</a>
 							<ul class="dropdown-menu drp-mnu">
 								
-								<li> <a href="profile.html"><i class="fa fa-suitcase"></i> Profile</a> </li> 
-								<li> <a href="#"><i class="fa fa-sign-out"></i> Logout</a> </li>
+								<li> <a href="profile.php"><i class="fa fa-suitcase"></i> Profile</a> </li>
+								<li> <a href="backend/logout.php"><i class="fa fa-sign-out"></i> Logout</a> </li>
 							</ul>
 						</li>
 					</ul>

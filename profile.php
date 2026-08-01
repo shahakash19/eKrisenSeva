@@ -14,7 +14,7 @@ $stmt->close();
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>e-KrisenSeva</title>
+	<title>e-KrisenSeva - Profile</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="Glance Design Dashboard Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
@@ -93,14 +93,14 @@ $stmt->close();
 								<a href="active_disaster.php">
 									<i class="fa fa-pie-chart"></i>
 									<span>Active Disaster</span>
-									<span class="label label-primary pull-right">new</span>
+									
 								</a>
 							</li>
 							
 							<li>
 								<a href="post_disaster.php">
 									<i class="fa fa-th"></i> <span>Post Disaster</span>
-									<small class="label pull-right label-info">08</small>
+									
 								</a>
 							</li>
 							<li class="header">LABELS</li>
@@ -124,7 +124,7 @@ $stmt->close();
 				<div class="profile_details_left"><!--notifications of menu start -->
 					<ul class="nofitications-dropdown">
 						<li class="dropdown head-dpdn">
-							<a href="chat.php" class="dropdown-toggle"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
+							<a href="chat.php"><i class="fa fa-envelope"></i></a>
 						</li>
 						
 					</ul>
@@ -350,7 +350,7 @@ $stmt->close();
 			</div>
 			<!--footer-->
 		<div class="footer">
-			<p>&copy; 2019 e-KrisenSreva Disaster Management System. All Rights Reserved | Design by <a href="#" target="_blank">El!te$</a></p>		
+			<p>&copy; 2019 e-KrisenSeva Disaster Management System. All Rights Reserved | Design by <a href="#" target="_blank">El!te$</a></p>		
 		</div>
 		<!--//footer-->
 			</div>

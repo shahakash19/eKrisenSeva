@@ -8,7 +8,7 @@ if(!isset($_SESSION['username'])) {
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>E-krisenseva</title>
+<title>e-KrisenSeva - Communications</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="" />
@@ -71,14 +71,14 @@ if(!isset($_SESSION['username'])) {
 								<a href="active_disaster.php">
 									<i class="fa fa-pie-chart"></i>
 									<span>Active Disaster</span>
-									<span class="label label-primary pull-right">new</span>
+									
 								</a>
 							</li>
 
 							<li>
 								<a href="post_disaster.php">
 									<i class="fa fa-th"></i> <span>Post Disaster</span>
-									<small class="label pull-right label-info">08</small>
+									
 								</a>
 							</li>
 							<li class="header">LABELS</li>
@@ -102,7 +102,7 @@ if(!isset($_SESSION['username'])) {
 				<div class="profile_details_left"><!--notifications of menu start -->
 					<ul class="nofitications-dropdown">
 						<li class="dropdown head-dpdn">
-							<a href="chat.php" class="dropdown-toggle"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
+							<a href="chat.php"><i class="fa fa-envelope"></i></a>
 						</li>
 						
 					</ul>
@@ -157,17 +157,17 @@ if(!isset($_SESSION['username'])) {
 					</div>
 					<div class="chat-grid widget-shadow">
 						<ul>
-							<li class="head">Officials </li>
+							<li class="head">Officials</li>
 							<li><a href="#">
 									<div class="chat-left">
 										<img class="img-circle" src="images/i1.png" alt="">
-										<label class="small-badge"></label>
+										<label class="small-badge bg-green"></label>
 									</div>
 									<div class="chat-right">
-										<p>Andrew Josifn</p>
-										<h6>Nullam quis risus eget </h6>
+										<p>District Coordinator</p>
+										<h6>Available</h6>
 									</div>
-									<div class="clearfix"> </div>	
+									<div class="clearfix"> </div>
 								</a>
 							</li>
 							<li><a href="#">
@@ -176,34 +176,34 @@ if(!isset($_SESSION['username'])) {
 										<label class="small-badge bg-green"></label>
 									</div>
 									<div class="chat-right">
-										<p>Justen Ferry</p>
-										<h6>Urna mollis ornare vel</h6>
+										<p>Relief Officer</p>
+										<h6>On field duty</h6>
 									</div>
-									<div class="clearfix"> </div>	
+									<div class="clearfix"> </div>
 								</a>
 							</li>
 							<li><a href="#">
 									<div class="chat-left">
 										<img class="img-circle" src="images/i3.png" alt="">
-										<label class="small-badge bg-green"></label>
+										<label class="small-badge"></label>
 									</div>
 									<div class="chat-right">
-										<p>Brown Andy </p>
-										<h6>Quis risus ullam neget </h6>
+										<p>Medical Officer</p>
+										<h6>Away</h6>
 									</div>
-									<div class="clearfix"> </div>	
+									<div class="clearfix"> </div>
 								</a>
 							</li>
 							<li><a href="#">
 									<div class="chat-left">
 										<img class="img-circle" src="images/i4.png" alt="">
-										<label class="small-badge"></label>
+										<label class="small-badge bg-green"></label>
 									</div>
 									<div class="chat-right">
-										<p>Deos Jhon</p>
-										<h6>Mollis ornare Urna vel</h6>
+										<p>Shelter Manager</p>
+										<h6>Available</h6>
 									</div>
-									<div class="clearfix"> </div>	
+									<div class="clearfix"> </div>
 								</a>
 							</li>
 						</ul>
@@ -276,7 +276,7 @@ if(!isset($_SESSION['username'])) {
 		</div>
 		<!--footer-->
 		<div class="footer">
-			<p>&copy; 2019 e-KrisenSreva Disaster Management System. All Rights Reserved | Design by <a href="#" target="_blank">El!te$</a></p>		
+			<p>&copy; 2019 e-KrisenSeva Disaster Management System. All Rights Reserved | Design by <a href="#" target="_blank">El!te$</a></p>		
 		</div>
 		<!--//footer-->
 	</div>

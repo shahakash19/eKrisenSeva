@@ -8,7 +8,7 @@ if(!isset($_SESSION['username'])) {
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>E-krisenseva</title>
+	<title>e-KrisenSeva - Pre-Disaster Management</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="" />
@@ -52,12 +52,6 @@ if(!isset($_SESSION['username'])) {
 
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc7FZQ6jG2VcxnxbMNdkPFFzrUsJxq-ys"></script>
 
-	<style>
-	#chartdiv {
-		width: 100%;
-		height: 295px;
-	}
-</style>
 <!--pie-chart --><!-- index page sales reviews visitors pie chart -->
 <script src="js/pie-chart.js" type="text/javascript"></script>
 
@@ -191,8 +185,7 @@ if(!isset($_SESSION['username'])) {
     	geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
     		if (status == google.maps.GeocoderStatus.OK) {
     			if (results[0]) {
-    				console.log("drag event");
-    				$add=(results[0].formatted_address);
+        				$add=(results[0].formatted_address);
     				$lat=(marker.getPosition().lat());
     				$lng=(marker.getPosition().lng());
     				return showcoords($add,$lat,$lng);
@@ -223,8 +216,7 @@ if(!isset($_SESSION['username'])) {
  		geocoder.geocode({'latLng': marker.getPosition()}, function (results, status) {
  			if (status == google.maps.GeocoderStatus.OK) {
  				if (results[0]) {
- 					console.log("drag event");
- 					$add=(results[0].formatted_address);
+ 	 					$add=(results[0].formatted_address);
  					$lat=(marker.getPosition().lat());
  					$lng=(marker.getPosition().lng());
  					return showcoords($add,$lat,$lng);
@@ -271,14 +263,14 @@ if(!isset($_SESSION['username'])) {
 								<a href="active_disaster.php">
 									<i class="fa fa-pie-chart"></i>
 									<span>Active Disaster</span>
-									<span class="label label-primary pull-right">new</span>
+									
 								</a>
 							</li>
 							
 							<li>
 								<a href="post_disaster.php">
 									<i class="fa fa-th"></i> <span>Post Disaster</span>
-									<small class="label pull-right label-info">08</small>
+									
 								</a>
 							</li>
 							<li class="header">LABELS</li>
@@ -302,7 +294,7 @@ if(!isset($_SESSION['username'])) {
 				<div class="profile_details_left"><!--notifications of menu start -->
 					<ul class="nofitications-dropdown">
 						<li class="dropdown head-dpdn">
-							<a href="chat.php" class="dropdown-toggle"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
+							<a href="chat.php"><i class="fa fa-envelope"></i></a>
 						</li>
 
 					</ul>
@@ -344,12 +336,12 @@ if(!isset($_SESSION['username'])) {
 		<div id="page-wrapper">
 			<div class="main-page">
 
-				<form>
+				<form action="backend/send_distress.php" method="POST">
 					<div class="form-group input-group">
-						<input type="text"  class="form-control" placeholder="Enter the distress message">
+						<input type="text" name="message" class="form-control" placeholder="Enter the distress message" required="">
 						<div class="input-group-btn">
-							<button class="btn btn-default" type="submit">
-								Send
+							<button class="btn btn-danger" type="submit">
+								Send Distress
 							</button>
 						</div>
 					</div>
@@ -405,7 +397,7 @@ if(!isset($_SESSION['username'])) {
 							</thead>
 							<tbody>
 								<?php 
-									include 'backend/connect.php';
+									include_once 'backend/connect.php';
 									include 'backend/view_shelter.php';
 									showDetails($con);
 								?>
@@ -430,45 +422,19 @@ if(!isset($_SESSION['username'])) {
 						<h4>Add Shelter Official</h4>
 					</div>
 					<div class="form-body">
-						<div data-example-id="simple-form-inline"> 
-							<form class="form-inline"> 
-								<div class="form-group"> 
-									<input type="name" class="form-control" id="exampleInputName3" placeholder="Name"> 
+						<div data-example-id="simple-form-inline">
+							<form class="form-inline" action="backend/add_official.php" method="POST">
+								<div class="form-group">
+									<input type="text" name="name" class="form-control" placeholder="Name" required="">
 								</div>
-								<div class="form-group"> 
-									<input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email"> 
-								</div> 
-								<div class="form-group"> 
-									<input type="type" class="form-control" id="exampleInputcontact3" placeholder="Contact No."> 
-								</div> 
-								<div class="checkbox"> 
-									<label> <input type="checkbox"> Remember me </label> 
-								</div> <button type="submit" class="btn btn-default">Add</button> 
-							</form> 
-						</div>
-					</div>
-				</div>
-				<div class="inline-form widget-shadow">
-					<div class="form-title">
-						<h4>Add Resource Provider</h4>
-					</div>
-					<div class="form-body">
-						<div data-example-id="simple-form-inline"> 
-							<form class="form-inline"> 
-								<div class="form-group"> 
-									<input type="name" class="form-control" id="exampleInputName3" placeholder="Name"> 
+								<div class="form-group">
+									<input type="email" name="email" class="form-control" placeholder="Email">
 								</div>
-								<div class="form-group"> 
-									<input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email"> 
-								</div> 
-								<div class="form-group"> 
-									<input type="text" class="form-control" id="exampleInputContact3" placeholder="Contact No."> 
-								</div> 
-								<div class="checkbox"> 
-									<label> <input type="checkbox"> Remember me </label> 
-								</div> 
-								<button type="submit" class="btn btn-default">Add</button> 
-							</form> 
+								<div class="form-group">
+									<input type="text" name="contact" class="form-control" placeholder="Contact No." required="">
+								</div>
+								<button type="submit" class="btn btn-primary">Add Official</button>
+							</form>
 						</div>
 					</div>
 				</div>
@@ -526,13 +492,10 @@ if(!isset($_SESSION['username'])) {
 											</div>
 
 											<div class="form-group">
-												<label for="selector1" class="col-sm-2 control-label">Shelter Official</label>
-												<div class="col-sm-8"><select name="selector1" id="selector1" class="form-control1">
-													<option >Lorem ipsum dolor sit amet.</option>
-													<option >Dolore, ab unde modi est!</option>
-													<option >Illum, fuga minus sit eaque.</option>
-													<option >Consequatur ducimus maiores vo.</option>
-												</select></div>
+												<label for="view-official" class="col-sm-2 control-label">Shelter Official</label>
+												<div class="col-sm-8">
+													<input type="text" class="form-control1" id="view-official" placeholder="—" readonly="">
+												</div>
 											</div>
 
 
@@ -572,68 +535,57 @@ if(!isset($_SESSION['username'])) {
 								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 								<h4 class="modal-title" id="exampleModalLabel">Add the Shelter Details</h4>
 							</div>
+							<form action="backend/add_shelter.php" class="form-horizontal" method="POST">
 							<div class="modal-body">
-
 								<div class="form-three widget-shadow">
-									<form action="backend/add_shelter.php" class="form-horizontal" method="POST">
 
-										<div class="form-group">
-											<label for="Name" class="col-sm-2 control-label">Name</label>
-											<div class="col-sm-8">
-												<input type="text" class="form-control1 add" id="sheltername" name="sheltername" placeholder="sheltername">
-											</div>
+									<div class="form-group">
+										<label for="Name" class="col-sm-2 control-label">Name</label>
+										<div class="col-sm-8">
+											<input type="text" class="form-control1 add" id="sheltername" name="sheltername" placeholder="Shelter name" required="">
 										</div>
-										<div class="form-group">
-											<label for="Address" class="col-sm-2 control-label">Address</label>
-											<div class="col-sm-8">
-												<input type="text" class="form-control1 add" id="shelteraddress" name="shelteraddress" placeholder="shelteraddress">
-											</div>
+									</div>
+									<div class="form-group">
+										<label for="Address" class="col-sm-2 control-label">Address</label>
+										<div class="col-sm-8">
+											<input type="text" class="form-control1 add" id="shelteraddress" name="shelteraddress" placeholder="Address" required="">
 										</div>
-										<div class="form-group">
-											<label for="Latitude" class="col-sm-2 control-label">Latitude</label>
-											<div class="col-sm-8">
-												<input type="text" class="form-control1" id="latitude" name="latitude" placeholder="Latitude">
-											</div>
+									</div>
+									<div class="form-group">
+										<label for="Latitude" class="col-sm-2 control-label">Latitude</label>
+										<div class="col-sm-8">
+											<input type="text" class="form-control1" id="latitude" name="latitude" placeholder="Latitude">
 										</div>
-										<div class="form-group">
-											<label for="Longitude" class="col-sm-2 control-label">Longitude</label>
-											<div class="col-sm-8">
-												<input type="text" class="form-control1" id="longitude" name="longitude" placeholder="Longitude">
-											</div>
+									</div>
+									<div class="form-group">
+										<label for="Longitude" class="col-sm-2 control-label">Longitude</label>
+										<div class="col-sm-8">
+											<input type="text" class="form-control1" id="longitude" name="longitude" placeholder="Longitude">
 										</div>
-										<div class="form-group">
-											<label for="checkbox" class="col-sm-2 control-label">Facilities</label>
-											<div class="col-sm-8">
-												<div class="checkbox-inline1"><label><input type="checkbox"name = "facility[]" value='0'> Food</label></div>
-												<div class="checkbox-inline1"><label><input type="checkbox"name = "facility[]" value='1' checked=""> Clothing</label></div>
-												<div class="checkbox-inline1"><label><input type="checkbox"name = "facility[]" value='2'>Shelter</label></div>
-												<div class="checkbox-inline1"><label><input type="checkbox"name = "facility[]" value='3' disabled="" checked=""> Sanitation</label></div>
-											</div>
+									</div>
+									<div class="form-group">
+										<label for="checkbox" class="col-sm-2 control-label">Facilities</label>
+										<div class="col-sm-8">
+											<div class="checkbox-inline1"><label><input type="checkbox" name="facility[]" value="0"> Food</label></div>
+											<div class="checkbox-inline1"><label><input type="checkbox" name="facility[]" value="1"> Clothing</label></div>
+											<div class="checkbox-inline1"><label><input type="checkbox" name="facility[]" value="2"> Shelter</label></div>
+											<div class="checkbox-inline1"><label><input type="checkbox" name="facility[]" value="3"> Sanitation</label></div>
 										</div>
+									</div>
+									<div class="form-group">
+										<label for="official-add" class="col-sm-2 control-label">Shelter Official</label>
+										<div class="col-sm-8">
+											<input type="text" class="form-control1" id="official-add" name="official-add" placeholder="Official name">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="capacity-add" class="col-sm-2 control-label label-input-sm">Capacity</label>
+										<div class="col-sm-8">
+											<input type="number" class="form-control1 input-sm" id="capacity-add" name="capacity-add" placeholder="Capacity" min="1">
+										</div>
+									</div>
 
-										<div class="form-group">
-											<label for="official-add" class="col-sm-2 control-label">Shelter Official</label>
-											<div class="col-sm-8"><select name="official-add" id="selector1" class="form-control1">
-												<option value="0">Lorem ipsum dolor sit amet.</option>
-												<option value="2">Dolore, ab unde modi est!</option>
-												<option value="3">Illum, fuga minus sit eaque.</option>
-												<option value="4">Consequatur ducimus maiores voluptatum minima.</option>
-											</select></div>
-										</div>
-
-
-
-
-										<div class="form-group">
-											<label for="capacity-add" class="col-sm-2 control-label label-input-sm">Capacity</label>
-											<div class="col-sm-8">
-												<input type="number" class="form-control1 input-sm" id="capacity-add" name="capacity-add" placeholder="Capacity">
-											</div>
-										</div>
-
-									
 								</div>
-
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -652,7 +604,7 @@ if(!isset($_SESSION['username'])) {
 		</div>
 		<!--footer-->
 		<div class="footer">
-			<p>&copy; 2019 e-KrisenSreva Disaster Management System. All Rights Reserved | Design by <a href="#" target="_blank">An0nymoX</a></p>		
+			<p>&copy; 2019 e-KrisenSeva Disaster Management System. All Rights Reserved | Design by <a href="#" target="_blank">e-KrisenSeva Team</a></p>		
 		</div>
 		<!--//footer-->
 	</div>

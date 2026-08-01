@@ -10,7 +10,7 @@ if(isset($_SESSION['username']))
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>E-krisenseva</title>
+	<title>e-KrisenSeva - Login</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="" />
@@ -129,7 +129,7 @@ if(isset($_SESSION['username']))
 		</div>
 		<!--footer-->
 		<div class="footer">
-			<p>&copy; 2019 e-KrisenSreva Disaster Management System. All Rights Reserved | Design by <a href="#" target="_blank">El!te$</a></p>		
+			<p>&copy; 2019 e-KrisenSeva Disaster Management System. All Rights Reserved | Design by <a href="#" target="_blank">El!te$</a></p>		
 		</div>
 		<!--//footer-->
 	</div>

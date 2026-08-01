@@ -8,7 +8,7 @@ if(!isset($_SESSION['username'])) {
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>E-krisenseva</title>
+<title>e-KrisenSeva - Send Message</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="" />
@@ -70,13 +70,13 @@ if(!isset($_SESSION['username'])) {
 							<a href="active_disaster.php">
 								<i class="fa fa-pie-chart"></i>
 								<span>Active Disaster</span>
-								<span class="label label-primary pull-right">new</span>
+								
 							</a>
 						</li>
 						<li>
 							<a href="post_disaster.php">
 								<i class="fa fa-th"></i> <span>Post Disaster</span>
-								<small class="label pull-right label-info">08</small>
+								
 							</a>
 						</li>
 						<li class="header">LABELS</li>
@@ -97,141 +97,14 @@ if(!isset($_SESSION['username'])) {
 				<!--toggle button start-->
 				<button id="showLeftPush"><i class="fa fa-bars"></i></button>
 				<!--toggle button end-->
-				<div class="profile_details_left"><!--notifications of menu start -->
+				<div class="profile_details_left">
 					<ul class="nofitications-dropdown">
 						<li class="dropdown head-dpdn">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
-							<ul class="dropdown-menu">
-								<li>
-									<div class="notification_header">
-										<h3>You have 3 new messages</h3>
-									</div>
-								</li>
-								<li><a href="#">
-								   <div class="user_img"><img src="images/1.jpg" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet</p>
-									<p><span>1 hour ago</span></p>
-									</div>
-								   <div class="clearfix"></div>	
-								</a></li>
-								<li class="odd"><a href="#">
-									<div class="user_img"><img src="images/4.jpg" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet </p>
-									<p><span>1 hour ago</span></p>
-									</div>
-								  <div class="clearfix"></div>	
-								</a></li>
-								<li><a href="#">
-								   <div class="user_img"><img src="images/3.jpg" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet </p>
-									<p><span>1 hour ago</span></p>
-									</div>
-								   <div class="clearfix"></div>	
-								</a></li>
-								<li>
-									<div class="notification_bottom">
-										<a href="#">See all messages</a>
-									</div> 
-								</li>
-							</ul>
+							<a href="chat.php"><i class="fa fa-envelope"></i></a>
 						</li>
-						<li class="dropdown head-dpdn">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-bell"></i><span class="badge blue">4</span></a>
-							<ul class="dropdown-menu">
-								<li>
-									<div class="notification_header">
-										<h3>You have 3 new notification</h3>
-									</div>
-								</li>
-								<li><a href="#">
-									<div class="user_img"><img src="images/4.jpg" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet</p>
-									<p><span>1 hour ago</span></p>
-									</div>
-								  <div class="clearfix"></div>	
-								 </a></li>
-								 <li class="odd"><a href="#">
-									<div class="user_img"><img src="images/1.jpg" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet </p>
-									<p><span>1 hour ago</span></p>
-									</div>
-								   <div class="clearfix"></div>	
-								 </a></li>
-								 <li><a href="#">
-									<div class="user_img"><img src="images/3.jpg" alt=""></div>
-								   <div class="notification_desc">
-									<p>Lorem ipsum dolor amet </p>
-									<p><span>1 hour ago</span></p>
-									</div>
-								   <div class="clearfix"></div>	
-								 </a></li>
-								 <li>
-									<div class="notification_bottom">
-										<a href="#">See all notifications</a>
-									</div> 
-								</li>
-							</ul>
-						</li>	
-						<li class="dropdown head-dpdn">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-tasks"></i><span class="badge blue1">8</span></a>
-							<ul class="dropdown-menu">
-								<li>
-									<div class="notification_header">
-										<h3>You have 8 pending task</h3>
-									</div>
-								</li>
-								<li><a href="#">
-									<div class="task-info">
-										<span class="task-desc">Database update</span><span class="percentage">40%</span>
-										<div class="clearfix"></div>	
-									</div>
-									<div class="progress progress-striped active">
-										<div class="bar yellow" style="width:40%;"></div>
-									</div>
-								</a></li>
-								<li><a href="#">
-									<div class="task-info">
-										<span class="task-desc">Dashboard done</span><span class="percentage">90%</span>
-									   <div class="clearfix"></div>	
-									</div>
-									<div class="progress progress-striped active">
-										 <div class="bar green" style="width:90%;"></div>
-									</div>
-								</a></li>
-								<li><a href="#">
-									<div class="task-info">
-										<span class="task-desc">Mobile App</span><span class="percentage">33%</span>
-										<div class="clearfix"></div>	
-									</div>
-								   <div class="progress progress-striped active">
-										 <div class="bar red" style="width: 33%;"></div>
-									</div>
-								</a></li>
-								<li><a href="#">
-									<div class="task-info">
-										<span class="task-desc">Issues fixed</span><span class="percentage">80%</span>
-									   <div class="clearfix"></div>	
-									</div>
-									<div class="progress progress-striped active">
-										 <div class="bar  blue" style="width: 80%;"></div>
-									</div>
-								</a></li>
-								<li>
-									<div class="notification_bottom">
-										<a href="#">See all pending tasks</a>
-									</div> 
-								</li>
-							</ul>
-						</li>	
 					</ul>
 					<div class="clearfix"> </div>
 				</div>
-				<!--notification menu end -->
 				<div class="clearfix"> </div>
 			</div>
 			<div class="header-right">
@@ -267,7 +140,7 @@ if(!isset($_SESSION['username'])) {
 		<!-- main content start-->
 		<div id="page-wrapper">
 			<div class="main-page compose">
-				<h2 class="title1">Chat Page</h2>
+				<h2 class="title1">Send Message</h2>
 				<div class="col-md-4 compose-left">
 					<div class="folder widget-shadow">
 						<ul>
@@ -281,17 +154,17 @@ if(!isset($_SESSION['username'])) {
 					</div>
 					<div class="chat-grid widget-shadow">
 						<ul>
-							<li class="head">Officials </li>
+							<li class="head">Officials</li>
 							<li><a href="#">
 									<div class="chat-left">
 										<img class="img-circle" src="images/i1.png" alt="">
-										<label class="small-badge"></label>
+										<label class="small-badge bg-green"></label>
 									</div>
 									<div class="chat-right">
-										<p>Andrew Josifn</p>
-										<h6>Nullam quis risus eget </h6>
+										<p>District Coordinator</p>
+										<h6>Available</h6>
 									</div>
-									<div class="clearfix"> </div>	
+									<div class="clearfix"> </div>
 								</a>
 							</li>
 							<li><a href="#">
@@ -300,34 +173,34 @@ if(!isset($_SESSION['username'])) {
 										<label class="small-badge bg-green"></label>
 									</div>
 									<div class="chat-right">
-										<p>Justen Ferry</p>
-										<h6>Urna mollis ornare vel</h6>
+										<p>Relief Officer</p>
+										<h6>On field duty</h6>
 									</div>
-									<div class="clearfix"> </div>	
+									<div class="clearfix"> </div>
 								</a>
 							</li>
 							<li><a href="#">
 									<div class="chat-left">
 										<img class="img-circle" src="images/i3.png" alt="">
-										<label class="small-badge bg-green"></label>
+										<label class="small-badge"></label>
 									</div>
 									<div class="chat-right">
-										<p>Brown Andy </p>
-										<h6>Quis risus ullam neget </h6>
+										<p>Medical Officer</p>
+										<h6>Away</h6>
 									</div>
-									<div class="clearfix"> </div>	
+									<div class="clearfix"> </div>
 								</a>
 							</li>
 							<li><a href="#">
 									<div class="chat-left">
 										<img class="img-circle" src="images/i4.png" alt="">
-										<label class="small-badge"></label>
+										<label class="small-badge bg-green"></label>
 									</div>
 									<div class="chat-right">
-										<p>Deos Jhon</p>
-										<h6>Mollis ornare Urna vel</h6>
+										<p>Shelter Manager</p>
+										<h6>Available</h6>
 									</div>
-									<div class="clearfix"> </div>	
+									<div class="clearfix"> </div>
 								</a>
 							</li>
 						</ul>
@@ -336,7 +209,7 @@ if(!isset($_SESSION['username'])) {
 				<div class="col-md-8 compose-right widget-shadow">
 					<div class="panel-default">
 						<div class="panel-heading">
-							Start your chat here 
+							Compose Message
 						</div>
 						<div class="panel-body">
 							<div class="alert alert-info">

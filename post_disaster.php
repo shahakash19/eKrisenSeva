@@ -8,7 +8,7 @@ if(!isset($_SESSION['username'])) {
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>E-krisenseva</title>
+	<title>e-KrisenSeva - Post-Disaster Report</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="" />
@@ -136,14 +136,14 @@ if(!isset($_SESSION['username'])) {
 								<a href="active_disaster.php">
 									<i class="fa fa-pie-chart"></i>
 									<span>Active Disaster</span>
-									<span class="label label-primary pull-right">new</span>
+									
 								</a>
 							</li>
 							
 							<li>
 								<a href="post_disaster.php">
 									<i class="fa fa-th"></i> <span>Post Disaster</span>
-									<small class="label pull-right label-info">08</small>
+									
 								</a>
 							</li>
 							<li class="header">LABELS</li>
@@ -167,7 +167,7 @@ if(!isset($_SESSION['username'])) {
 				<div class="profile_details_left"><!--notifications of menu start -->
 					<ul class="nofitications-dropdown">
 						<li class="dropdown head-dpdn">
-							<a href="chat.php" class="dropdown-toggle"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
+							<a href="chat.php"><i class="fa fa-envelope"></i></a>
 						</li>
 						
 					</ul>
@@ -211,46 +211,46 @@ if(!isset($_SESSION['username'])) {
 						<div class="col_3">
 							<div class="col-md-3 widget widget1">
 								<div class="r3_counter_box">
-									<i class="pull-left fa fa-dollar icon-rounded"></i>
+									<i class="pull-left fa fa-check-circle icon-rounded"></i>
 									<div class="stats">
-										<h5><strong>$452</strong></h5>
-										<span>Victims marked Safe</span>
+										<h5><strong>452</strong></h5>
+										<span>Victims Marked Safe</span>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-3 widget widget1">
 								<div class="r3_counter_box">
-									<i class="pull-left fa fa-laptop user1 icon-rounded"></i>
+									<i class="pull-left fa fa-exclamation-triangle user1 icon-rounded"></i>
 									<div class="stats">
-										<h5><strong>$1019</strong></h5>
-										<span>Victims Unfsafe</span>
+										<h5><strong>1019</strong></h5>
+										<span>Victims Unsafe</span>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-3 widget widget1">
 								<div class="r3_counter_box">
-									<i class="pull-left fa fa-money user2 icon-rounded"></i>
+									<i class="pull-left fa fa-medkit user2 icon-rounded"></i>
 									<div class="stats">
-										<h5><strong>$1012</strong></h5>
-										<span>Resources used</span>
+										<h5><strong>1012</strong></h5>
+										<span>Resources Deployed</span>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-3 widget widget1">
 								<div class="r3_counter_box">
-									<i class="pull-left fa fa-pie-chart dollar1 icon-rounded"></i>
+									<i class="pull-left fa fa-home dollar1 icon-rounded"></i>
 									<div class="stats">
-										<h5><strong>$450</strong></h5>
-										<span>Shelters Destroyed</span>
+										<h5><strong>450</strong></h5>
+										<span>Shelters Damaged</span>
 									</div>
 								</div>
 							</div>
 							<div class="col-md-3 widget">
 								<div class="r3_counter_box">
-									<i class="pull-left fa fa-users dollar2 icon-rounded"></i>
+									<i class="pull-left fa fa-building dollar2 icon-rounded"></i>
 									<div class="stats">
 										<h5><strong>1450</strong></h5>
-										<span>Shelters remaining</span>
+										<span>Shelters Operational</span>
 									</div>
 								</div>
 							</div>
@@ -261,7 +261,7 @@ if(!isset($_SESSION['username'])) {
 							<div class="col-md-7 content-top-2 card">
 								<div class="agileinfo-cdr">
 									<div class="card-header">
-										<h3>Weekly Sales</h3>
+										<h3>Incident Report Overview</h3>
 									</div>
 									
 									<div id="Linegraph" style="width: 98%; height: 350px">
@@ -269,68 +269,36 @@ if(!isset($_SESSION['username'])) {
 									
 								</div>
 							</div>
-							<div class="col-md-3 stat">
+							<div class="col-md-5 stat">
 								<div class="content-top-1">
 									<div class="col-md-6 top-content">
-										<h5>Sales</h5>
-										<label>1283+</label>
+										<h5>Safe</h5>
+										<label>452</label>
 									</div>
-									<div class="col-md-6 top-content1">	   
-										<div id="demo-pie-1" class="pie-title-center" data-percent="45"> <span class="pie-value"></span> </div>
+									<div class="col-md-6 top-content1">
+										<div id="demo-pie-1" class="pie-title-center" data-percent="31"> <span class="pie-value"></span> </div>
 									</div>
 									<div class="clearfix"> </div>
 								</div>
 								<div class="content-top-1">
 									<div class="col-md-6 top-content">
-										<h5>Reviews</h5>
-										<label>2262+</label>
+										<h5>Rescued</h5>
+										<label>875</label>
 									</div>
-									<div class="col-md-6 top-content1">	   
-										<div id="demo-pie-2" class="pie-title-center" data-percent="75"> <span class="pie-value"></span> </div>
+									<div class="col-md-6 top-content1">
+										<div id="demo-pie-2" class="pie-title-center" data-percent="60"> <span class="pie-value"></span> </div>
 									</div>
 									<div class="clearfix"> </div>
 								</div>
 								<div class="content-top-1">
 									<div class="col-md-6 top-content">
-										<h5>Visitors</h5>
-										<label>12589+</label>
+										<h5>Sheltered</h5>
+										<label>1450</label>
 									</div>
-									<div class="col-md-6 top-content1">	   
-										<div id="demo-pie-3" class="pie-title-center" data-percent="90"> <span class="pie-value"></span> </div>
+									<div class="col-md-6 top-content1">
+										<div id="demo-pie-3" class="pie-title-center" data-percent="82"> <span class="pie-value"></span> </div>
 									</div>
 									<div class="clearfix"> </div>
-								</div>
-							</div>
-							<div class="col-md-2 stat">
-								<div class="content-top">
-									<div class="top-content facebook">
-										<a href="#"><i class="fa fa-facebook"></i></a>
-									</div>
-									<ul class="info">
-										<li class="col-md-6"><b>1,296</b><p>Friends</p></li>
-										<li class="col-md-6"><b>647</b><p>Likes</p></li>
-										<div class="clearfix"></div>
-									</ul>
-								</div>
-								<div class="content-top">
-									<div class="top-content twitter">
-										<a href="#"><i class="fa fa-twitter"></i></a>
-									</div>
-									<ul class="info">
-										<li class="col-md-6"><b>1,997</b><p>Followers</p></li>
-										<li class="col-md-6"><b>389</b><p>Tweets</p></li>
-										<div class="clearfix"></div>
-									</ul>
-								</div>
-								<div class="content-top">
-									<div class="top-content google-plus">
-										<a href="#"><i class="fa fa-google-plus"></i></a>
-									</div>
-									<ul class="info">
-										<li class="col-md-6"><b>1,216</b><p>Followers</p></li>
-										<li class="col-md-6"><b>321</b><p>shares</p></li>
-										<div class="clearfix"></div>
-									</ul>
 								</div>
 							</div>
 							<div class="clearfix"> </div>
@@ -339,23 +307,18 @@ if(!isset($_SESSION['username'])) {
 						<div class="charts">
 							<div class="col-md-4 charts-grids widget">
 								<div class="card-header">
-									<h3>Bar chart</h3>
+									<h3>Damage Assessment</h3>
 								</div>
 								
 								<div id="container" style="width: 100%; height:270px;">
 									<canvas id="canvas"></canvas>
 								</div>
-								<button id="randomizeData">Randomize Data</button>
-								<button id="addDataset">Add Dataset</button>
-								<button id="removeDataset">Remove Dataset</button>
-								<button id="addData">Add Data</button>
-								<button id="removeData">Remove Data</button>
 								
 							</div>
 							
 							<div class="col-md-4 charts-grids widget states-mdl">
 								<div class="card-header">
-									<h3>Column & Line Graph</h3>
+									<h3>Recovery Progress</h3>
 								</div>
 								<div id="chartdiv"></div>
 							</div>
@@ -598,7 +561,7 @@ if(!isset($_SESSION['username'])) {
 				</div>
 				<!--footer-->
 		<div class="footer">
-			<p>&copy; 2019 e-KrisenSreva Disaster Management System. All Rights Reserved | Design by <a href="#" target="_blank">El!te$</a></p>		
+			<p>&copy; 2019 e-KrisenSeva Disaster Management System. All Rights Reserved | Design by <a href="#" target="_blank">El!te$</a></p>		
 		</div>
 		<!--//footer-->
 			</div>
@@ -614,33 +577,17 @@ if(!isset($_SESSION['username'])) {
 				var barChartData = {
 					labels: ["January", "February", "March", "April", "May", "June", "July"],
 					datasets: [{
-						label: 'Dataset 1',
+						label: 'Damage Reports',
 						backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
 						borderColor: window.chartColors.red,
 						borderWidth: 1,
-						data: [
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor()
-						]
+						data: [42, 68, 31, 85, 57, 73, 29]
 					}, {
-						label: 'Dataset 2',
+						label: 'Relief Operations',
 						backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
 						borderColor: window.chartColors.blue,
 						borderWidth: 1,
-						data: [
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor()
-						]
+						data: [38, 52, 61, 44, 78, 55, 67]
 					}]
 
 				};
@@ -657,7 +604,7 @@ if(!isset($_SESSION['username'])) {
 							},
 							title: {
 								display: true,
-								text: 'Chart.js Bar Chart'
+								text: 'Monthly Disaster Activity'
 							}
 						}
 					});
@@ -904,9 +851,9 @@ if(!isset($_SESSION['username'])) {
     			data: [graphdata4, graphdata3, graphdata2, graphdata1],
     			legendsize: "140",
     			legendposition: 'bottom',
-    			xaxislabel: 'Hours',
-    			title: 'Weekly Profit',
-    			yaxislabel: 'Profit in $'
+    			xaxislabel: 'Month',
+    			title: 'Disaster Response Data',
+    			yaxislabel: 'Count'
     		});
     		$("#sltchartype").on('change', function () {
     			$("#Bargraph").SimpleChart('ChartType', $(this).val());
@@ -922,9 +869,9 @@ if(!isset($_SESSION['username'])) {
     			data: [graphdata4],
     			legendsize: "140",
     			legendposition: 'bottom',
-    			xaxislabel: 'Hours',
-    			title: 'Weekly Profit',
-    			yaxislabel: 'Profit in $'
+    			xaxislabel: 'Month',
+    			title: 'Disaster Response Data',
+    			yaxislabel: 'Count'
     		});
     		$("#Linegraph").SimpleChart({
     			ChartType: "Line",
@@ -936,9 +883,9 @@ if(!isset($_SESSION['username'])) {
     			data: [graphdata4, graphdata3, graphdata2, graphdata1],
     			legendsize: "140",
     			legendposition: 'bottom',
-    			xaxislabel: 'Hours',
-    			title: 'Weekly Profit',
-    			yaxislabel: 'Profit in $'
+    			xaxislabel: 'Month',
+    			title: 'Disaster Response Data',
+    			yaxislabel: 'Count'
     		});
     		$("#Areagraph").SimpleChart({
     			ChartType: "Area",
@@ -950,9 +897,9 @@ if(!isset($_SESSION['username'])) {
     			data: [graphdata4, graphdata3, graphdata2, graphdata1],
     			legendsize: "140",
     			legendposition: 'bottom',
-    			xaxislabel: 'Hours',
-    			title: 'Weekly Profit',
-    			yaxislabel: 'Profit in $'
+    			xaxislabel: 'Month',
+    			title: 'Disaster Response Data',
+    			yaxislabel: 'Count'
     		});
     		$("#Scatterredgraph").SimpleChart({
     			ChartType: "Scattered",
@@ -964,9 +911,9 @@ if(!isset($_SESSION['username'])) {
     			data: [graphdata4, graphdata3, graphdata2, graphdata1],
     			legendsize: "140",
     			legendposition: 'bottom',
-    			xaxislabel: 'Hours',
-    			title: 'Weekly Profit',
-    			yaxislabel: 'Profit in $'
+    			xaxislabel: 'Month',
+    			title: 'Disaster Response Data',
+    			yaxislabel: 'Count'
     		});
     		$("#Piegraph").SimpleChart({
     			ChartType: "Pie",
@@ -979,9 +926,9 @@ if(!isset($_SESSION['username'])) {
     			data: [Piedata],
     			legendsize: "250",
     			legendposition: 'right',
-    			xaxislabel: 'Hours',
-    			title: 'Weekly Profit',
-    			yaxislabel: 'Profit in $'
+    			xaxislabel: 'Month',
+    			title: 'Disaster Response Data',
+    			yaxislabel: 'Count'
     		});
 
     		$("#Stackedbargraph").SimpleChart({
@@ -994,9 +941,9 @@ if(!isset($_SESSION['username'])) {
     			data: [graphdata3, graphdata2, graphdata1],
     			legendsize: "140",
     			legendposition: 'bottom',
-    			xaxislabel: 'Hours',
-    			title: 'Weekly Profit',
-    			yaxislabel: 'Profit in $'
+    			xaxislabel: 'Month',
+    			title: 'Disaster Response Data',
+    			yaxislabel: 'Count'
     		});
 
     		$("#StackedHybridbargraph").SimpleChart({
@@ -1009,9 +956,9 @@ if(!isset($_SESSION['username'])) {
     			data: [graphdata3, graphdata2, graphdata1],
     			legendsize: "140",
     			legendposition: 'bottom',
-    			xaxislabel: 'Hours',
-    			title: 'Weekly Profit',
-    			yaxislabel: 'Profit in $'
+    			xaxislabel: 'Month',
+    			title: 'Disaster Response Data',
+    			yaxislabel: 'Count'
     		});
     	});
 

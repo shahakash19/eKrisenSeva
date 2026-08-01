@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(!isset($_SESSION['username'])) {
+	header("Location: index.php");
+	exit();
+}
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -315,8 +322,8 @@
 								<div class="profile_img">	
 									<span class="prfil-img"><img src="images/2.jpg" alt=""> </span> 
 									<div class="user-name">
-										<p>Admin Name</p>
-										<span>Administrator</span>
+										<p><?php echo htmlspecialchars($_SESSION['username']); ?></p>
+										<span>User</span>
 									</div>
 									<i class="fa fa-angle-down lnr"></i>
 									<i class="fa fa-angle-up lnr"></i>

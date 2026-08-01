@@ -8,7 +8,7 @@ if(!isset($_SESSION['username'])) {
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>E-krisenseva</title>
+	<title>e-KrisenSeva - Post-Disaster Report</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="" />
@@ -136,14 +136,14 @@ if(!isset($_SESSION['username'])) {
 								<a href="active_disaster.php">
 									<i class="fa fa-pie-chart"></i>
 									<span>Active Disaster</span>
-									<span class="label label-primary pull-right">new</span>
+									
 								</a>
 							</li>
 							
 							<li>
 								<a href="post_disaster.php">
 									<i class="fa fa-th"></i> <span>Post Disaster</span>
-									<small class="label pull-right label-info">08</small>
+									
 								</a>
 							</li>
 							<li class="header">LABELS</li>
@@ -167,7 +167,7 @@ if(!isset($_SESSION['username'])) {
 				<div class="profile_details_left"><!--notifications of menu start -->
 					<ul class="nofitications-dropdown">
 						<li class="dropdown head-dpdn">
-							<a href="chat.php" class="dropdown-toggle"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
+							<a href="chat.php"><i class="fa fa-envelope"></i></a>
 						</li>
 						
 					</ul>
@@ -313,11 +313,6 @@ if(!isset($_SESSION['username'])) {
 								<div id="container" style="width: 100%; height:270px;">
 									<canvas id="canvas"></canvas>
 								</div>
-								<button id="randomizeData">Randomize Data</button>
-								<button id="addDataset">Add Dataset</button>
-								<button id="removeDataset">Remove Dataset</button>
-								<button id="addData">Add Data</button>
-								<button id="removeData">Remove Data</button>
 								
 							</div>
 							
@@ -566,7 +561,7 @@ if(!isset($_SESSION['username'])) {
 				</div>
 				<!--footer-->
 		<div class="footer">
-			<p>&copy; 2019 e-KrisenSreva Disaster Management System. All Rights Reserved | Design by <a href="#" target="_blank">El!te$</a></p>		
+			<p>&copy; 2019 e-KrisenSeva Disaster Management System. All Rights Reserved | Design by <a href="#" target="_blank">El!te$</a></p>		
 		</div>
 		<!--//footer-->
 			</div>
@@ -582,33 +577,17 @@ if(!isset($_SESSION['username'])) {
 				var barChartData = {
 					labels: ["January", "February", "March", "April", "May", "June", "July"],
 					datasets: [{
-						label: 'Dataset 1',
+						label: 'Damage Reports',
 						backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
 						borderColor: window.chartColors.red,
 						borderWidth: 1,
-						data: [
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor()
-						]
+						data: [42, 68, 31, 85, 57, 73, 29]
 					}, {
-						label: 'Dataset 2',
+						label: 'Relief Operations',
 						backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
 						borderColor: window.chartColors.blue,
 						borderWidth: 1,
-						data: [
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor(),
-						randomScalingFactor()
-						]
+						data: [38, 52, 61, 44, 78, 55, 67]
 					}]
 
 				};
@@ -625,7 +604,7 @@ if(!isset($_SESSION['username'])) {
 							},
 							title: {
 								display: true,
-								text: 'Chart.js Bar Chart'
+								text: 'Monthly Disaster Activity'
 							}
 						}
 					});
@@ -872,9 +851,9 @@ if(!isset($_SESSION['username'])) {
     			data: [graphdata4, graphdata3, graphdata2, graphdata1],
     			legendsize: "140",
     			legendposition: 'bottom',
-    			xaxislabel: 'Hours',
-    			title: 'Weekly Profit',
-    			yaxislabel: 'Profit in $'
+    			xaxislabel: 'Month',
+    			title: 'Disaster Response Data',
+    			yaxislabel: 'Count'
     		});
     		$("#sltchartype").on('change', function () {
     			$("#Bargraph").SimpleChart('ChartType', $(this).val());
@@ -890,9 +869,9 @@ if(!isset($_SESSION['username'])) {
     			data: [graphdata4],
     			legendsize: "140",
     			legendposition: 'bottom',
-    			xaxislabel: 'Hours',
-    			title: 'Weekly Profit',
-    			yaxislabel: 'Profit in $'
+    			xaxislabel: 'Month',
+    			title: 'Disaster Response Data',
+    			yaxislabel: 'Count'
     		});
     		$("#Linegraph").SimpleChart({
     			ChartType: "Line",
@@ -904,9 +883,9 @@ if(!isset($_SESSION['username'])) {
     			data: [graphdata4, graphdata3, graphdata2, graphdata1],
     			legendsize: "140",
     			legendposition: 'bottom',
-    			xaxislabel: 'Hours',
-    			title: 'Weekly Profit',
-    			yaxislabel: 'Profit in $'
+    			xaxislabel: 'Month',
+    			title: 'Disaster Response Data',
+    			yaxislabel: 'Count'
     		});
     		$("#Areagraph").SimpleChart({
     			ChartType: "Area",
@@ -918,9 +897,9 @@ if(!isset($_SESSION['username'])) {
     			data: [graphdata4, graphdata3, graphdata2, graphdata1],
     			legendsize: "140",
     			legendposition: 'bottom',
-    			xaxislabel: 'Hours',
-    			title: 'Weekly Profit',
-    			yaxislabel: 'Profit in $'
+    			xaxislabel: 'Month',
+    			title: 'Disaster Response Data',
+    			yaxislabel: 'Count'
     		});
     		$("#Scatterredgraph").SimpleChart({
     			ChartType: "Scattered",
@@ -932,9 +911,9 @@ if(!isset($_SESSION['username'])) {
     			data: [graphdata4, graphdata3, graphdata2, graphdata1],
     			legendsize: "140",
     			legendposition: 'bottom',
-    			xaxislabel: 'Hours',
-    			title: 'Weekly Profit',
-    			yaxislabel: 'Profit in $'
+    			xaxislabel: 'Month',
+    			title: 'Disaster Response Data',
+    			yaxislabel: 'Count'
     		});
     		$("#Piegraph").SimpleChart({
     			ChartType: "Pie",
@@ -947,9 +926,9 @@ if(!isset($_SESSION['username'])) {
     			data: [Piedata],
     			legendsize: "250",
     			legendposition: 'right',
-    			xaxislabel: 'Hours',
-    			title: 'Weekly Profit',
-    			yaxislabel: 'Profit in $'
+    			xaxislabel: 'Month',
+    			title: 'Disaster Response Data',
+    			yaxislabel: 'Count'
     		});
 
     		$("#Stackedbargraph").SimpleChart({
@@ -962,9 +941,9 @@ if(!isset($_SESSION['username'])) {
     			data: [graphdata3, graphdata2, graphdata1],
     			legendsize: "140",
     			legendposition: 'bottom',
-    			xaxislabel: 'Hours',
-    			title: 'Weekly Profit',
-    			yaxislabel: 'Profit in $'
+    			xaxislabel: 'Month',
+    			title: 'Disaster Response Data',
+    			yaxislabel: 'Count'
     		});
 
     		$("#StackedHybridbargraph").SimpleChart({
@@ -977,9 +956,9 @@ if(!isset($_SESSION['username'])) {
     			data: [graphdata3, graphdata2, graphdata1],
     			legendsize: "140",
     			legendposition: 'bottom',
-    			xaxislabel: 'Hours',
-    			title: 'Weekly Profit',
-    			yaxislabel: 'Profit in $'
+    			xaxislabel: 'Month',
+    			title: 'Disaster Response Data',
+    			yaxislabel: 'Count'
     		});
     	});
 

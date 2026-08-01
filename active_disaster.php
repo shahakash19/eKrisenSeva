@@ -8,7 +8,7 @@ if(!isset($_SESSION['username'])) {
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>E-krisenseva</title>
+	<title>e-KrisenSeva - Active Disaster</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="" />
@@ -52,12 +52,6 @@ if(!isset($_SESSION['username'])) {
 
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCc7FZQ6jG2VcxnxbMNdkPFFzrUsJxq-ys"></script>
 
-	<style>
-	#chartdiv {
-		width: 100%;
-		height: 295px;
-	}
-</style>
 <!--pie-chart --><!-- index page sales reviews visitors pie chart -->
 <script src="js/pie-chart.js" type="text/javascript"></script>
 
@@ -272,14 +266,14 @@ if(!isset($_SESSION['username'])) {
 								<a href="active_disaster.php">
 									<i class="fa fa-pie-chart"></i>
 									<span>Active Disaster</span>
-									<span class="label label-primary pull-right">new</span>
+									
 								</a>
 							</li>
 							
 							<li>
 								<a href="post_disaster.php">
 									<i class="fa fa-th"></i> <span>Post Disaster</span>
-									<small class="label pull-right label-info">08</small>
+									
 								</a>
 							</li>
 							<li class="header">LABELS</li>
@@ -303,7 +297,7 @@ if(!isset($_SESSION['username'])) {
 				<div class="profile_details_left"><!--notifications of menu start -->
 					<ul class="nofitications-dropdown">
 						<li class="dropdown head-dpdn">
-							<a href="chat.php" class="dropdown-toggle"><i class="fa fa-envelope"></i><span class="badge">4</span></a>
+							<a href="chat.php"><i class="fa fa-envelope"></i></a>
 						</li>
 						
 					</ul>
@@ -364,15 +358,12 @@ if(!isset($_SESSION['username'])) {
 						<!-- display google map -->
 						<div id="geomap"></div>
 
-						<!-- <div class="inline-form widget-shadow" id="showcoords" style="display:none;">
+						<div class="inline-form widget-shadow" id="showcoords" style="display:none;">
 							<div class="alert alert-add" role="alert">
-								The position you have selected is <strong class="add">""</strong> and the latitudes and longitutes are <strong class="lat">""</strong> and <strong class="lng">""</strong> respectively. Are you sure to add the current location as shelter?<br>
-
-
+								The position you have selected is <strong class="add">""</strong> and the coordinates are <strong class="lat">""</strong>, <strong class="lng">""</strong>. Add this location as a shelter?<br>
 								<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#addShelterModal" data-whatever="@mdo">Add Shelter</button>
 							</div>
 						</div>
- -->
 
 
 
@@ -464,13 +455,10 @@ if(!isset($_SESSION['username'])) {
 													</div>
 
 													<div class="form-group">
-														<label for="selector1" class="col-sm-2 control-label">Shelter Official</label>
-														<div class="col-sm-8"><select name="selector1" id="selector1" class="form-control1">
-															<option >Lorem ipsum dolor sit amet.</option>
-															<option >Dolore, ab unde modi est!</option>
-															<option >Illum, fuga minus sit eaque.</option>
-															<option >Consequatur ducimus maiores vo.</option>
-														</select></div>
+														<label for="view-official" class="col-sm-2 control-label">Shelter Official</label>
+														<div class="col-sm-8">
+															<input type="text" class="form-control1" id="view-official" placeholder="—" readonly="">
+														</div>
 													</div>
 
 
@@ -584,7 +572,7 @@ if(!isset($_SESSION['username'])) {
 				</div>
 				<!--footer-->
 		<div class="footer">
-			<p>&copy; 2019 e-KrisenSreva Disaster Management System. All Rights Reserved | Design by <a href="#" target="_blank">El!te$</a></p>		
+			<p>&copy; 2019 e-KrisenSeva Disaster Management System. All Rights Reserved | Design by <a href="#" target="_blank">El!te$</a></p>		
 		</div>
 		<!--//footer-->
 			</div>
